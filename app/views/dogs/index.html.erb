@@ -1,0 +1,11 @@
+<%= link_to 'New Dog', new_dog_path %>
+
+<% @dogs.each do |dog| %>
+<div id='dog-<%= dog.id %>'>
+  <h1> <%= dog.name %> </h1>
+  <h2>Breed: <%= dog.breed %> </h2>
+  <h2>Location: <%= dog.location %> </h2>
+  <%= image_tag(dog.image_url) %>
+  <%= button_to 'Delete Dog', dog, method: :delete, remote: true %>
+</div>
+<% end %>

@@ -1,0 +1,22 @@
+<% if flash[:error] %>
+  <% flash[:error].each do |error| %>
+    <h2> <%= error %></h2>
+  <% end %>
+<% end %>
+
+<%= form_for @dog do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :breed %>
+  <%= f.text_field :breed %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url %>
+
+  <%= f.submit %>
+
+<% end %>
